@@ -5,15 +5,15 @@ from .models import Doctor,Patient
 
 class RegisterForm(UserCreationForm):
     city = forms.CharField(max_length=100,label="City")
-    date_established = forms.DateField(label="Date Established")
     pincode = forms.CharField(max_length=6, label="Pincode")
     address=forms.CharField(max_length=200)
     website=forms.URLField(label="Your Website", required=False)
     email=forms.EmailField(label="Email",required=True)
     username=forms.CharField(label="Hospital Name")
+    password2=forms.CharField(label="Confirm Password")
     class Meta:
         model = User
-        fields = ["username", "password1", "password2","website","date_established","city","address","pincode","email"]
+        fields = ["username", "password1", "password2","website","city","address","pincode","email"]
 
 class DoctorForm(forms.ModelForm):
     class Meta:

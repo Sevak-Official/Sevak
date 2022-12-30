@@ -7,19 +7,10 @@
   <input class="form-control me-2" type="search" name='q' placeholder="Enter City or symptoms" aria-label="Search">
   <button class="btn btn-outline-success" type="submit" >Search</button>
 </form>
-</div>
-</div>
-</nav> 
+
 
 <div class="po">
-<div class="container-sm" >
-    <form method="post">
-      {% csrf_token %}
-      {{form|crispy}}
-      <div class="form-group">
-        <center><button type="submit" class="btn btn-outline-info">Add Symptoms</button></center>
-      </div>
-    </form>
+  <div class="container-sm" >
     <br>
       <div class="table-responsive">
         <table class="table table-bordered table-fixed">
@@ -48,4 +39,6 @@
   </div>
           {% endfor %}
 </div>
+</div>
+
 {% endblock content %}

@@ -2,13 +2,20 @@
 {% block title %}Sign Up{% endblock%}
 {% load crispy_forms_tags %} {% block content %}
 <div class="container">
+  <div class=" flex container" style="padding-left:30%;padding-top:2%; padding-bottom:2%">
+    
+    <div class="flex-r login-wrapper">
+
+        <div class="login-text" >
 <form method="post">
   {% csrf_token %}
   {{form|crispy}}
-  <center><p>Already Registered Hospital? Login <a href='/login'>here</a></p></center>
-<div class="form-group">
-  <center><button type="submit" class="btn btn-outline-info">Register</button></center>
-</div>
+  <div class="form-group">
+    <center><button type="submit" class="btn btn-outline-info">Register</button></center>
+  </div>
+  <center><p> Already Registered? <br> Login <a href='/login'>here</a></p></center>
+</div></div></div>
+
 </form>
 </div>
 {% endblock %}

@@ -24,7 +24,6 @@ SECRET_KEY = 'django-insecure-_f#a(up^)4sckf@b1ysubfvq^e_k!xdv9qphy+-#f*nu0uz%^5
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =True
-
 ALLOWED_HOSTS = ['*']
 
 
@@ -132,3 +131,7 @@ LOGOUT_REDIRECT_URL='/login'
 GOOGLE_API_KEY="AIzaSyAK1DMT_0ntfd4fIBPLIr7sy5t1YJ-Ye6o"
 RECAPTCHA_KEY="6Leru4sjAAAAAD526iBIWTMe9as6ZwvWSwHHCbup"
 RECAPTCHA_SECRET_KEY="6Leru4sjAAAAAKwgExUFij8sH8_cW80czJ7gSVqP"
+# for production
+import os
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')

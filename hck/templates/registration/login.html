@@ -1,6 +1,5 @@
 {% extends '../hck/base.html' %} 
-{% block title %}Login{% endblock title %}
-{% block content %}
+{% comment %} {% block title %}Login{% endblock title %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid ">
     <a class="navbar-brand" href="#">NAME</a>
@@ -18,14 +17,21 @@
     </ul>
       </div>
     </div>
-  </nav> 
+  </nav>  {% endcomment %}
+  {% block content %}
 {% load crispy_forms_tags %}
-<div class="container" > 
-    <form method="post">
+  <div class=" flex container" style="padding-left:25%;padding-top:10%;">
+    
+    <div class="flex-r login-wrapper">
+
+        <div class="login-text" >
+    <center><form method="post">
+      <h1><u>Login Page</u></h1><br>
       {% csrf_token %}
       {{form|crispy}}
-      <center><p>If Hospital isn't registered,Register <a href='/sign-up'>here</a></p>  </center>
+      <center><p>Hospital not found? <br> Click <a href='/sign-up'>here!</a></p> </center>
     <center><button type="submit" class="btn btn-outline-info">Login</button></center>
     </form>
   </div> 
+</div> </div> 
 {% endblock content %}
