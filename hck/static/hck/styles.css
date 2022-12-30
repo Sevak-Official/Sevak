@@ -1,0 +1,49 @@
+.asteriskField {
+    display: none;
+}
+.form-label{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.c{
+    background-color: blue;
+}
+li{
+    margin-left: 5%;
+}
+.po{
+    color:white;
+    animation: example 5s;
+    animation-timing-function:ease-in-out;
+     animation-iteration-count: infinite;
+     /* font-family: 'Unbounded'; */
+      /* font-family: 'Merriweather';
+      font-style: italic; */
+      font-weight: 400;
+      font-display: swap;
+    animation-direction:alternate;
+}
+@keyframes example {
+    from   {background-color:black;}
+    to  {background-color:midnightblue; }
+  }
+.card-body{
+    font-family: 'Unbounded';
+    font-style: italic;
+}
+
+.container{
+    margin-top: 5%;
+    font-family: 'Unbounded';
+    font-style: oblique;
+    font-size: 1.0em;
+    border-radius:2rem;
+   background-color:black;
+   display:flex;
+   align-items:center;
+   padding:1em; 
+   color:blue;
+   height:60%;
+   justify-content: center;
+}

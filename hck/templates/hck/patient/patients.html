@@ -1,0 +1,51 @@
+{% extends 'hck/hospital/hospitals.html' %}
+{% block title %}Patient{% endblock title %}
+{% block content %}
+
+{% load crispy_forms_tags %}
+<form class="d-flex"  role="search">
+  <input class="form-control me-2" type="search" name='q' placeholder="Enter City or symptoms" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit" >Search</button>
+</form>
+</div>
+</div>
+</nav> 
+
+<div class="po">
+<div class="container-sm" >
+    <form method="post">
+      {% csrf_token %}
+      {{form|crispy}}
+      <div class="form-group">
+        <center><button type="submit" class="btn btn-outline-info">Add Symptoms</button></center>
+      </div>
+    </form>
+    <br>
+      <div class="table-responsive">
+        <table class="table table-bordered table-fixed">
+          <thead>
+            <tr>
+              <div class="gf">
+            <th style="width:20%;color:white">CITY</th>
+            <th style="width:26%;color:white">SYMPTOMS</th>
+            <th style="width:26%;color:white">CLINIC WEBSITE</th>
+            <th style="width:26%;color:white">HOSPITAL NAME</th>
+            <div />
+            </tr>
+          </thead>
+          {% for task in page_obj %}
+          <tbody>
+              <tr>
+              <td style="width:20%; color:white;">{{task.name}}</td>
+              <td style="width:26%;color:white;">{{task.specialization}}</td>
+              <td style="width:26%;"><a href='{{task.clinic_website}}' style="color:white;text-decoration:none">CLICK HERE</a></td>
+              <td style="width:26%;color:white;">{{task.user}} <a href='{{task.website}}' style="color:white;text-decoration:none">CLICK HERE</a></td>
+              </tr>
+          </tbody>
+          {% empty %}
+          <h6>No items in list</h6>
+      </table>
+  </div>
+          {% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends '../hck/base.html' %} 
+{% block title %}Login{% endblock title %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid ">
+    <a class="navbar-brand" href="#">NAME</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse px-5" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0  ">
+          <li >
+            <a class="nav-link active px-5" style="color:aqua;"aria-current="page" href="/">HOME</a>
+          </li>
+      <li class="nav-item" >
+        <a class="nav-link active px-5" style="color:aqua;"aria-current="page" href="/patients">PATIENTS PORTAL</a>
+      </li>
+    </ul>
+      </div>
+    </div>
+  </nav> 
+{% load crispy_forms_tags %}
+<div class="container" > 
+    <form method="post">
+      {% csrf_token %}
+      {{form|crispy}}
+      <center><p>If Hospital isn't registered,Register <a href='/sign-up'>here</a></p>  </center>
+    <center><button type="submit" class="btn btn-outline-info">Login</button></center>
+    </form>
+  </div> 
+{% endblock content %}

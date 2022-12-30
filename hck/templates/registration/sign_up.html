@@ -1,0 +1,14 @@
+{% extends 'hck/base.html' %}
+{% block title %}Sign Up{% endblock%}
+{% load crispy_forms_tags %} {% block content %}
+<div class="container">
+<form method="post">
+  {% csrf_token %}
+  {{form|crispy}}
+  <center><p>Already Registered Hospital? Login <a href='/login'>here</a></p></center>
+<div class="form-group">
+  <center><button type="submit" class="btn btn-outline-info">Register</button></center>
+</div>
+</form>
+</div>
+{% endblock %}
