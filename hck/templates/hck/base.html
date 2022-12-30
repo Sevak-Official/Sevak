@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> {% block title %}Home {% endblock title %}</title>
+    <title> {% block title %}Sevak{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'hck/styles.css' %}">
     <link rel="shortcut icon" href="{%  static 'hck/favicon.ico' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,42 +12,96 @@
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   </head>
-  <body class="c">
+  <body>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" style="padding-left: 5vw; padding-right: 50vw" href="#" style="font:verdana">Sevak</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Portal
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Patients</a></li>
+                <li><a class="dropdown-item" href="#">Hospitals</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </nav>
         {% block content %}
-        <center><h1 style="color:white; font-family: 'Unbounded';
-          font-style: oblique;
-          font-size: 3.2em;margin:2%">NAME</h1></center>
-        <div class="container">
-          <h1 style="color:yellow">ONE STOP FOR PATIENTS WHO SUFFER FROM CERTAIN SYMPTOMS AND WANT TO FIND THE CLOSEST  
-HOSPITALS AND ALSO THE DOCTORS SPECIALIZED IN TREATING THE SYMPTOMS 
-          </h1>
-  
-            <div class="container" style="color:white">
-         THE HOSPITALS CAN GET THEIR DETAILS REGISTERED AND CAN ALSO GET THE PATIENTS CAN LIST DOWN THEIR SYMPTOMS
+        <div class="container-sm">
+        <div class="hstack gap-3" style="padding-top: 5%;">
+          <div class="bg-light border">
+            <img src="{% static 'hck/images/doctor.gif' %}" alt="doctor patient conversing"/>
+          </div>
+          <div class="bg-light border">
+          <div class="vstack gap-3">
+            <div class="bg-light border">
+              <div class="card" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title">HOSPITAL PORTAL</h5>
+                  <p class="card-text">The Hospitals register themselves here as well as their doctors.</p>
+                  <a href="/hospitals" class="btn btn-primary">HOSPITAL PORTAL</a>
+                </div>
+              </div>
+            </div>
+            <div class="bg-light border">
+              <div class="card" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title">PATIENTS PORTAL</h5>
+                  <p class="card-text">Patients specify their problems here.</p>
+                  <a href="/patients" class="btn btn-primary">PATIENTS PORTAL</a>
+                </div>
+              </div>
             </div>
           </div>
-            <div class="container-sm">
-              <div class="row">
-               <div class="col-sm-6">
-                 <div class="card bg-warning">
-              <div class="card-body">
-               <h5 class="card-title">HOSPITAL PORTAL</h5>
-               <p class="card-text">The Hospitals register themselves here as well as their  doctors.</p>
-               <a href="/hospitals" class="card-link" style="color:black">HOSPITAL LINK</a>
-             </div>
-           </div>
-         </div>
-         <div class="col-sm-6">
-           <div class="card bg-warning">
-           <div class="card-body">
-             <h5 class="card-title">PATIENTS PORTAL</h5>
-             <p class="card-text">Patients specify their problems here.</p>
-             <a href="/patients" class="card-link" style="color:black">PATIENTS LINK</a>
-           </div>
          </div>
          </div>
-         </div>
-         </div>
+          </div>
+          <section style="padding-top:4%">
+          <figure class="text-center">
+            <blockquote class="blockquote">
+              <p><em>"Finding the right doctor won't be a hassle anymore."</em></p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+               <cite title="Source Title">Team Sevak</cite>
+            </figcaption>
+          </figure>
+        </section>
+       </div>  {% comment %}<section style="padding-top:6%">
+            <form class="container-sm">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </section> {% endcomment %}
+        </div>
            {% endblock content %}
        
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

@@ -28,22 +28,22 @@ li{
     from   {background-color:black;}
     to  {background-color:midnightblue; }
   }
-.card-body{
-    font-family: 'Unbounded';
+/* .card-body{ */
+    /* font-family: 'Unbounded';
     font-style: italic;
-}
+} */
 
-.container{
+/* .container{
     margin-top: 5%;
     font-family: 'Unbounded';
     font-style: oblique;
     font-size: 1.0em;
     border-radius:2rem;
-   background-color:black;
+   background-color:rgb(255, 255, 255);
    display:flex;
    align-items:center;
    padding:1em; 
    color:blue;
    height:60%;
    justify-content: center;
-}
+} */
