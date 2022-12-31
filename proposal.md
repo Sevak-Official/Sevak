@@ -30,7 +30,7 @@ For example, the Akul family recently relocated from Mangalore to Bangalore. Mr.
 
 ## **How it works:**
 
-![Architecture Model](architecturemodel.png)
+![Architecture Model](architecturemodel.png) </br>
 We are using Python with the Django framework to efficiently host our web app and store data on doctors and hospitals in SQL tables.
 
 The frontend of the app is developed using HTML, CSS, and JavaScript, resulting in a simple yet modern and feature-rich user interface.
