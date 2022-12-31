@@ -15,6 +15,8 @@ from django.contrib.auth import login,logout,authenticate
 # team404@1-pass
 #abc-user
 #aaaa@332-password
+def about(request):
+    return render(request,'hck/hospital/about.html')
 def base(request):
     return render(request,'hck/base.html')
 @login_required(login_url='/login')
