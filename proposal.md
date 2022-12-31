@@ -1,9 +1,9 @@
 # **Sevak**
-## -Finding the right doctor won't be a hassle anymore!
+> Finding the right doctor won't be a hassle anymore!
 
 ## **The Team:**
 - Royal Simpson Pinto- royalpinto007@icloud.com
-- Srinivas R- srinivasa.r0503@outlook.com
+- Srinivasa R- srinivasa.r0503@outlook.com
 - Tarun S Hegde- tarun.hegde0907@gmail.com
 - Vignaraj Pai- vignarajpai@outlook.com
 
@@ -29,16 +29,18 @@ The app also enables individuals to search for doctors who specialize in treatin
 For example, the Akul family recently relocated from Mangalore to Bangalore. Mr. Akul has just taken a new job and is renting an apartment close to his office. However, about a week after moving, he started experiencing chest pains. As a newcomer to the city, Mr. Akul does not know which doctors are available in his area and may not feel comfortable relying on potentially unreliable Google reviews or untrustworthy websites to find a doctor. SEVAK will assist him in finding a cardiology doctor and hospital that suits his needs.
 
 ## **How it works:**
+
+![Architecture Model](architecturemodel.png) </br>
 We are using Python with the Django framework to efficiently host our web app and store data on doctors and hospitals in SQL tables.
 
 The frontend of the app is developed using HTML, CSS, and JavaScript, resulting in a simple yet modern and feature-rich user interface.
 
 ## **Core Technologies:**
 - Python
-- JavaScript
 - Azure
 - HTML
 - CSS
+- JavaScript
 - Git
 - SQL
 
@@ -48,3 +50,20 @@ To promote the website, we will market it to hospitals and collect data from a l
 Once a sufficient number of hospitals are registered, the website will be launched with advertisements to attract users. The platform can then be monetized by charging hospitals a nominal fee to maintain their profile on the site.
 
 ## **Business Model:**
+
+There are several potential business models that could be implemented for a healthcare app in the future-
+
+#### Subscription-based: </br>
+Under this model, users would pay a recurring fee in order to access certain features of the app, such as the ability to search for medical professionals and treatment options.
+
+#### Advertising:  </br>
+Healthcare providers could pay to advertise their services on the app through sponsored search results or banner ads.
+
+#### Commission-based:  </br>
+The app could take a percentage of the fees charged by the medical professionals and hospitals listed on the platform, similar to how online travel agencies function.
+
+#### Freemium:  </br>
+The app could be offered for free, with users paying for additional premium features such as more detailed search results or the ability to book appointments directly through the app.
+
+#### Hybrid:  </br>
+This model could combine elements of multiple business models, such as offering a basic version for free while charging for premium features and/or allowing healthcare providers to advertise on the platform.

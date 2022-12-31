@@ -1,5 +1,7 @@
 # Project Name- Sevak (Track: Health)
 
+-- [Project Proposal](proposal.md)
+
 ### Deployment links- 
 -- [Azure](https://sevak.azurewebsites.net/) :link: </br>
 -- [GitHub Repo](https://github.com/royalpinto007/Sevak) :link: </br>  
@@ -23,4 +25,3 @@ Our target audience are patients who are unfamiliar with the local area and wish
 - [Tarun S Hegde](https://github.com/tarun-hegde) <br/>
 - [Vignaraj Pai](https://github.com/Vignaraj-pai)<br/>
 
-# Challenges we ran into-
