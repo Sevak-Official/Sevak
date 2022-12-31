@@ -1,5 +1,5 @@
 # **Sevak**
-> ## Finding the right doctor won't be a hassle anymore!
+> Finding the right doctor won't be a hassle anymore!
 
 ## **The Team:**
 - Royal Simpson Pinto- royalpinto007@icloud.com
