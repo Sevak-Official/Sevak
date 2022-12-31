@@ -51,14 +51,19 @@ Once a sufficient number of hospitals are registered, the website will be launch
 
 ## **Business Model:**
 
-There are several potential business models that could be implemented for a healthcare app in the future:
+There are several potential business models that could be implemented for a healthcare app in the future-
 
-#### Subscription-based: Under this model, users would pay a recurring fee in order to access certain features of the app, such as the ability to search for medical professionals and treatment options.
+#### Subscription-based: </br>
+Under this model, users would pay a recurring fee in order to access certain features of the app, such as the ability to search for medical professionals and treatment options.
 
-#### Advertising: Healthcare providers could pay to advertise their services on the app through sponsored search results or banner ads.
+#### Advertising:  </br>
+Healthcare providers could pay to advertise their services on the app through sponsored search results or banner ads.
 
-#### Commission-based: The app could take a percentage of the fees charged by the medical professionals and hospitals listed on the platform, similar to how online travel agencies function.
+#### Commission-based:  </br>
+The app could take a percentage of the fees charged by the medical professionals and hospitals listed on the platform, similar to how online travel agencies function.
 
-#### Freemium: The app could be offered for free, with users paying for additional premium features such as more detailed search results or the ability to book appointments directly through the app.
+#### Freemium:  </br>
+The app could be offered for free, with users paying for additional premium features such as more detailed search results or the ability to book appointments directly through the app.
 
-#### Hybrid: This model could combine elements of multiple business models, such as offering a basic version for free while charging for premium features and/or allowing healthcare providers to advertise on the platform.
+#### Hybrid:  </br>
+This model could combine elements of multiple business models, such as offering a basic version for free while charging for premium features and/or allowing healthcare providers to advertise on the platform.
