@@ -1,6 +1,9 @@
+# Project Name- Sevak (Track: Health)
 
-# Project Name- Sevak (Track- Health)
--- Azure deployment link- [Sevak](https://sevak.azurewebsites.net/) :link: </br>
+### Deployment links- 
+-- [Azure](https://sevak.azurewebsites.net/) :link: </br>
+-- [GitHub Repo](https://github.com/royalpinto007/Sevak) :link: </br>  
+
 The technologies utilized in the development of this service include Python, JavaScript, Azure, HTML, CSS, Git, and SQL.
 
 ![Sevak](Sevak.png)
