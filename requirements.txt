@@ -6,3 +6,4 @@ django-mathfilters==1.0.0
 psycopg2-binary==2.9.3
 sqlparse==0.4.3
 tzdata==2022.4
+whitenoise==6.2.0
