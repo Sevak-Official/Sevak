@@ -3,7 +3,7 @@
 
 ## **The Team:**
 - Royal Simpson Pinto- royalpinto007@icloud.com
-- Srinivas R- srinivasa.r0503@outlook.com
+- Srinivasa R- srinivasa.r0503@outlook.com
 - Tarun S Hegde- tarun.hegde0907@gmail.com
 - Vignaraj Pai- vignarajpai@outlook.com
 
