@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_f#a(up^)4sckf@b1ysubfvq^e_k!xdv9qphy+-#f*nu0uz%^5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =True
+DEBUG =False
 ALLOWED_HOSTS = ['*']
 
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -133,5 +134,9 @@ RECAPTCHA_KEY="6Leru4sjAAAAAD526iBIWTMe9as6ZwvWSwHHCbup"
 RECAPTCHA_SECRET_KEY="6Leru4sjAAAAAKwgExUFij8sH8_cW80czJ7gSVqP"
 # for production
 import os
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
