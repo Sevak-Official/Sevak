@@ -13,6 +13,7 @@ class RegisterForm(UserCreationForm):
     password2=forms.CharField(label="Confirm Password")
     class Meta:
         model = User
+        clinic_website=forms.URLField(label="Your Website", required=False)
         fields = ["username", "password1", "password2","website","city","address","pincode","email"]
 
 class DoctorForm(forms.ModelForm):

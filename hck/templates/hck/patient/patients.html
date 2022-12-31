@@ -4,7 +4,7 @@
 
 {% load crispy_forms_tags %}
 <form class="d-flex"  role="search">
-  <input class="form-control me-2" type="search" name='q' placeholder="Enter City or symptoms" aria-label="Search">
+  <input class="form-control me-2" type="search" name='q' placeholder="Enter City or Specialization or Doctor" aria-label="Search">
   <button class="btn btn-outline-success" type="submit" >Search</button>
 </form>
 <div class="po">
@@ -15,20 +15,32 @@
           <thead>
             <tr>
               <div class="gf">
-            <th style="width:20%;color:white">CITY</th>
-            <th style="width:26%;color:white">SYMPTOMS</th>
-            <th style="width:26%;color:white">CLINIC WEBSITE</th>
-            <th style="width:26%;color:white">HOSPITAL NAME</th>
+                <th style="width:10%;color:white">NAME</th>
+            <th style="width:10%;color:white">CITY</th>
+            <th style="width:10%;color:white">SPECIALIZATION</th>
+            <th style="width:10%;color:white">CLINIC WEBSITE</th>
+            <th style="width:16%;color:white">HOSPITAL NAME</th>
+            <div />
             <div />
             </tr>
           </thead>
           {% for task in page_obj %}
           <tbody>
               <tr>
-              <td style="width:20%; color:white;">{{task.name}}</td>
-              <td style="width:26%;color:white;">{{task.specialization}}</td>
-              <td style="width:26%;"><a href='{{task.clinic_website}}' style="color:white;text-decoration:none">CLICK HERE</a></td>
-              <td style="width:26%;color:white;">{{task.user}} <a href='{{task.website}}' style="color:white;text-decoration:none">CLICK HERE</a></td>
+                <td style="width:10%; color:white;">{{task.name}}</td>
+                <td style="width:10%; color:white;">{{task.city}}</td>
+                <td style="width:10%;color:white;">{{task.specialization}}</td>
+                <td style="width:10%;">
+                  {% if task.clinic_website is None %}
+                <h6>No Website</h6> {% else %}
+                  <a href='{{task.clinic_website}}' style="color:white;text-decoration:none">CLICK HERE</a></td>
+                <td style="width:16%;color:white;">{{task.user|upper}} 
+                  {% endif %}
+                  {% if task.website is None %}
+                <h6>No Website</h6>
+                {% else %}
+                <a href='{{task.website}}' style="color:white;text-decoration:none">CLICK HERE</a></td>
+                  {% endif %}
               </tr>
           </tbody>
           {% empty %}

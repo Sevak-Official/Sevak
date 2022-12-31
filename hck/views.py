@@ -9,22 +9,20 @@ from django.contrib.auth import login,logout,authenticate
 # Create your views here.
 # team-superuser
 # team404-pass
-# team1-user
-# team404@-pass
-# team-user
-# team404@1-pass
 #abc-user
 #aaaa@332-password
+#user-AJIMS
+#pass-123@aaAb
+#user-BJIMS
+#pass-123@abc
+#user-JJIMS
+#pass-123@Aabc
 def about(request):
     return render(request,'hck/hospital/about.html')
 def base(request):
     return render(request,'hck/base.html')
 @login_required(login_url='/login')
 def main(request):
-    table=Doctor.objects.all()
-    paginator = Paginator(table, 5)
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
     if request.method=="POST":
      form=DoctorForm(request.POST)
      if form.is_valid():
@@ -34,10 +32,18 @@ def main(request):
         t=form.save(commit=False)
         t.user = request.user
         t.save()
-        return render(request,'hck/hospital/hospitals.html',{"table":table,"page_obj":page_obj})
     else:
          form=DoctorForm()
-    return render(request,'hck/hospital/hospitals.html',{"form":form,"table":table,"page_obj":page_obj})
+    table = Doctor.objects.all()
+    paginator = Paginator(table, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'hck/hospital/hospitals.html', {
+        "form": form,
+        "table": table,
+        "page_obj": page_obj
+    })
 def sign_up(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -59,7 +65,7 @@ def sign_up(request):
             user_data.save()
             k= authenticate(username=username, password=password)
             login(request, k)
-            return render(request, 'registration/login.html', {'form': form})
+            return redirect('login')
     else:
          form = RegisterForm()
     return render(request, 'registration/sign_up.html', {'form': form})
