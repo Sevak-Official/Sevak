@@ -8,7 +8,7 @@
 
 The technologies utilized in the development of this service include Python, JavaScript, Azure, HTML, CSS, Git, and SQL.
 
-![Sevak](Sevak.jpeg)
+![Sevak](Sevak.png)
 
 # About the Project-
 - Our web application serves as a one-stop resource for patients to locate physicians specialized in treating their specific symptoms by searching for the city, physician's name, or the physician's area of specialization. :raised_back_of_hand: <br/>
