@@ -3,7 +3,7 @@
 > (Website- https://sevak.azurewebsites.net/) </br>
 > (Contact- sevakofficial4@gmail.com)
 
-Proposal File in docx- [View](imp-docs/proposal.md)
+Proposal File in docx- [View](imp-docs/proposal.docx)
 
 ## **The Team:**
 - [Royal Simpson Pinto](https://github.com/royalpinto007) <br/>
