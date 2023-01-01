@@ -1,7 +1,7 @@
 # Project Name- Sevak (Track: Health)
 
--- [Project Proposal](proposal.md)
--- [Software Instructions](software-instructions.md]
+-- [Project Proposal](proposal.md) </br>
+-- [Software Instructions](software-instructions.md)
 
 ### Deployment links- 
 -- [Azure](https://sevak.azurewebsites.net/) :link: </br>
