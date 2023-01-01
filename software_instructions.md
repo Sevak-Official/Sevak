@@ -1,5 +1,7 @@
 # Sevak
 
+Software Instructions in docx- [View](imp-docs/software-instructions.docx)
+
 ## **Prerequisites:**
 
 -	Python should be installed in the computer. (Preferably, Python 3.10) 
