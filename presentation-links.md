@@ -1,7 +1,6 @@
 # Presentation Video
 
 [YouTube Link](https://youtu.be/xiJFTipuINQ) </br>
-
 [OneDrive Link](https://onedrive.live.com/?authkey=%21AGSQcbHFQgnVroY&id=19271BD61907B273%21103&cid=19271BD61907B273) </br>
 
 # Social Media Handles
