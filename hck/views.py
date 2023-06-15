@@ -18,7 +18,49 @@ from django.contrib.auth import login,logout,authenticate
 #user-JJIMS
 #pass-123@Aabc
 def about(request):
-    return render(request,'hck/hospital/about.html')
+     features = [
+        {
+            'title': 'One-Stop Resource',
+            'description': 'Our web application serves as a one-stop resource for patients to locate physicians specialized in treating their specific symptoms by searching for the city, physician\'s name, or the physician\'s area of specialization. ',
+        },
+        {
+            'title': 'Access to Clinics and Hospitals',
+            'description': 'Also, our service provides patients with the convenience of accessing information about the clinics or hospitals where their chosen physician practices, allowing them to consider both hospitals and clinics as options for treatment. ',
+        },
+        {
+            'title': 'Hospital Registration',
+            'description': 'Hospitals are also able to register with our service and provide information about the doctors they have on staff, thus contributing to our mission of assisting patients in finding physicians in their local area. ',
+        },
+        {
+            'title': 'Restricted Access',
+            'description': 'Access to add information about doctors is restricted to authenticated users only. Thus allowing no external organization to edit any information of the hospital.',
+        },
+    ]
+     business_models = [
+        {
+            'title': 'Freemium',
+            'description': 'The app could be offered for free, with users paying for additional premium features such as more detailed search results or the ability to book appointments directly through the app.',
+        },
+        {
+            'title': 'Subscription-based',
+            'description': 'Under this model, users would pay a recurring fee in order to access certain features of the app, such as the ability to search for medical professionals and treatment options.',
+        },
+        {
+            'title': 'Advertising',
+            'description': 'Healthcare providers could pay to advertise their services on the app through sponsored search results or banner ads.',
+        },
+        {
+            'title': 'Commission-based',
+            'description': 'The app could take a percentage of the fees charged by the medical professionals and hospitals listed on the platform, similar to how online travel agencies function.',
+        },
+        {
+            'title': 'Hybrid',
+            'description': 'This model could combine elements of multiple business models, such as offering a basic version for free while charging for premium features and/or allowing healthcare providers to advertise on the platform.',
+        },
+    ]
+    
+     context = {'features': features,'business_models':business_models}
+     return render(request,'hck/hospital/about.html',context)
 def base(request):
     return render(request,'hck/base.html')
 @login_required(login_url='/login')

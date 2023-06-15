@@ -1,9 +1,9 @@
-
-/* .form-label{
+/* 
+.form-label{
 display: flex;
 justify-content: center;
 align-items: center;
-} */
+} 
 
 .form-text{
     display: none;
@@ -14,19 +14,19 @@ li{
 
   
   /* Style the form header */
-  .form-header {
+  /* .form-header {
     margin-bottom: 30px;
     text-align: center;
   }
   
-  /* Style the form title */
+  /* Style the form title 
   .form-title {
     font-size: 24px;
     font-weight: bold;
     color: #333;
   }
   
-  /* Style the form fields */
+  /* Style the form fields 
   .form-group {
     margin-bottom: 15px;
   }
@@ -35,12 +35,12 @@ li{
     /* display: block;
     font-size: 14px;
     font-weight: bold;
-    color: #333; */
+    color: #333; 
     font-size: 15px;
     color: black;
     margin-bottom: 3px;
   }
-  /* Style the form button */
+  /* Style the form button 
   .form-button {
     display: block;
     width: 100%;
@@ -59,23 +59,6 @@ li{
     cursor: pointer;
   }
   
-.po{
-    color:white;;
-    animation: example 5s;
-    animation-timing-function:ease-in-out;
-     animation-iteration-count: infinite;
-     /* font-family: 'Unbounded'; */
-      /* font-family: 'Merriweather';
-      font-style: italic; */
-      font-weight: 400;
-      font-display: swap;
-    animation-direction:alternate;
-}
-@keyframes example {
-    from   {background-color:black;}
-    to  {background-color:midnightblue; }
-  } 
-
 .container{
     width: 100%;
     min-height: 93vh;
@@ -89,7 +72,49 @@ li{
     min-height: 300px;
     border-radius: 10px;
     padding: 10px 20px;
+} */
+  body {
+    background-color: #000f26;
+  }
+h1{
+  color:white;
 }
+  .card { 
+    height: 100%;
+    border: 2px solid white;
+    background-color: black; 
+    color:white;
+    transition: background-color 1s;
+  }
+  .card:hover {
+    background-color: #1f1f1f; 
+    transform: scale(1.05);
+  }
+  .custom-card{
+    margin-bottom: 20px;
+
+  }
+  h5{
+    color: #000f26;
+  }
+  .container {
+    font-family: Arial;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
 
 
 .login-text h1{
@@ -104,4 +129,5 @@ form{
     align-items: flex-start !important;
     width: 100%;
     margin-top: 15px;
-}
+} 
+

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> {% block title %}Sevak{% endblock title %}</title>
-    <link rel="stylesheet" href="{% static 'hck/styles.css' %}">
+
     <link rel="shortcut icon" href="{%  static 'hck/favicon.ico' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,32 +19,50 @@
   </head>
   <body class="po">
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" style="padding-left: 5vw" href="https://sevak.azurewebsites.net/" style="font:verdana">Sevak</a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <ul class="navbar-nav ">
- 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Portal
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/patients">Patients</a></li>
-                <li><a class="dropdown-item" href="/hospitals">Hospitals</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="/about">About</a>
-            </li>
-      
-          </ul>
-        </div>
+  
+      <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Portal
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/patients">Patients</a></li>
+              <li><a class="dropdown-item" href="/hospitals">Hospitals</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/about">About</a>
+          </li>
+        </ul>
       </div>
-      </nav>
+      
+      <a class="navbar-brand" href="/" style="font:verdana">Sevak</a>
+    </div>
+  </nav>
             {% block content %}
+            <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+  
+              <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mx-auto">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Portal
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/patients">Patients</a></li>
+                      <li><a class="dropdown-item" href="/hospitals">Hospitals</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/about">About</a>
+                  </li>
+                </ul>
+              </div>
+              
+              <a class="navbar-brand" href="/" style="font:verdana">Sevak</a>
+            </div>
+          </nav>
           {% load crispy_forms_tags %}
           <div class="container-sm">
             <div class="po" >
