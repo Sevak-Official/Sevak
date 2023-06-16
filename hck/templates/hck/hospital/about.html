@@ -2,53 +2,9 @@
 <title>{% block title %}Sevak{% endblock title %}</title>
 
 {% block content %}
-<style>
-  body {
-    {% comment %}  {% endcomment %}
-    background-color: #000f26;
-  }
-h1{
-  color:white;
-}
-  .card { 
-    height: 100%;
-    border: 2px solid white;
-    background-color: black; /* Add black background color */
-    color:white;
-    transition: background-color 1s;
-  }
-  .card:hover {
-    background-color: #1f1f1f; /* Update the hover background color */
-    transform: scale(1.05);
-  }
-  .custom-card{
-    margin-bottom: 20px;
 
-  }
-  h5{
-    color: #000f26;
-  }
-  .container {
-    font-family: Arial;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-
-  @media (min-width: 768px) {
-    .container {
-      max-width: 960px;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .container {
-      max-width: 1140px;
-    }
-  }
-</style>
   <div class="container">
-    <h1>Features</h1>
+    <h1><u>Features</u></h1>
     <div class="row container">
       {% for feature in features %}
       <div class="col-lg-6 col-md-12 custom-card">
@@ -62,7 +18,7 @@ h1{
       {% endfor %}
     </div>
     
-    <h1 class="text-center">Business Model</h1>
+    <h1 class="text-center"><u>Business Model</u></h1>
     <div class="row container">
       {% for model in business_models %}
       <div class="col-lg-4 col-md-12 col-sm-12 custom-card">

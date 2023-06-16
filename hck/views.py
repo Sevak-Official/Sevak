@@ -76,16 +76,21 @@ def main(request):
         t.save()
     else:
          form=DoctorForm()
-    table = Doctor.objects.all()
-    paginator = Paginator(table, 5)
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
 
     return render(request, 'hck/hospital/hospitals.html', {
         "form": form,
-        "table": table,
-        "page_obj": page_obj
     })
+
+@login_required(login_url='/login')
+def doctors(request):
+    table = Doctor.objects.all()
+    # paginator = Paginator(table, 5)
+    # page_number = request.GET.get('page')
+    # page_obj = paginator.get_page(page_number)
+
+    return render(request, 'hck/hospital/doctors.html')
+
+
 def sign_up(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
