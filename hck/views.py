@@ -17,6 +17,8 @@ from django.contrib.auth import login,logout,authenticate
 #pass-123@abc
 #user-JJIMS
 #pass-123@Aabc
+#user-MJIMS
+#pass-123@Aabc
 def about(request):
      features = [
         {
