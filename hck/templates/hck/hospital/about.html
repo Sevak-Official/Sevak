@@ -47,11 +47,14 @@ h1{
     }
   }
 </style>
+
+</br>
   <div class="container">
-    <h1>Features</h1>
-    <div class="row container">
+    <h1>Features</h1> 
+    <div class="row container" style="margin-bottom: 35px;">
       {% for feature in features %}
       <div class="col-lg-6 col-md-12 custom-card">
+        </br>
         <div class="card mb-4">
           <div class="card-body">
             <h5 class="card-title text-white text-center">{{ feature.title }}</h5>
@@ -66,6 +69,7 @@ h1{
     <div class="row container">
       {% for model in business_models %}
       <div class="col-lg-4 col-md-12 col-sm-12 custom-card">
+        </br>
         <div class="card ">
           <div class="card-body">
             <h5 class="card-title text-white text-center">{{ model.title }}</h5>
