@@ -5,7 +5,7 @@ Software Instructions in docx- [View](imp-docs/software-instructions.docx)
 ## **Prerequisites:**
 
 -	Python should be installed in the computer. (Preferably, Python 3.10) 
--	Make sure that inside path is within the Sevak directory. If not, the command is [cd Seva].
+-	Make sure that inside path is within the Sevak directory. If not, the command is [cd Sevak].
 -	Also, use command [pip install virtualenv] in order to install virtual environments.
 -	Now, make a virtual environment named hi using command [virtualenv hi].	
 
