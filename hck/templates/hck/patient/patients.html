@@ -1,25 +1,44 @@
 {% extends 'hck/hospital/hospitals.html' %}
 {% block title %}Patient{% endblock title %}
 {% block content %}
-
 {% load crispy_forms_tags %}
-<form class="d-flex"  role="search">
-  <input class="form-control me-2" type="search" name='q' placeholder="Enter City or Specialization or Doctor" aria-label="Search">
-  <button class="btn btn-outline-success" type="submit" >Search</button>
-</form>
+
+<style>
+  .center-underline {
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .d-flex {
+    display: flex;
+    width: 100%;
+    padding-top: 2%;
+  }
+
+  .d-flex .form-control {
+    margin-left: 60%;
+  }
+</style>
+
+
 <div class="po">
   <div class="container-sm" >
-    <br>
+    </br>
+    <h1 class="center-underline">Patients Portal</h1>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" name='q' placeholder="Enter City or Specialization or Doctor" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit" >Search</button>
+      </form>
       <div class="table-responsive">
-        <table class="table table-bordered table-fixed">
+        <table class="table table-bordered table-fixed text-center">
           <thead>
             <tr>
               <div class="gf">
-                <th style="width:10%;color:white">NAME</th>
-            <th style="width:10%;color:white">CITY</th>
-            <th style="width:10%;color:white">SPECIALIZATION</th>
-            <th style="width:10%;color:white">CLINIC WEBSITE</th>
-            <th style="width:16%;color:white">HOSPITAL NAME</th>
+                <th style="width:10%;color:white">Name</th>
+            <th style="width:10%;color:white">City</th>
+            <th style="width:10%;color:white">Specialization</th>
+            <th style="width:10%;color:white">Clinic Website</th>
+            <th style="width:16%;color:white">Hospital Name</th>
             <div />
             <div />
             </tr>
@@ -33,13 +52,13 @@
                 <td style="width:10%;">
                   {% if task.clinic_website is None %}
                 <h6>No Website</h6> {% else %}
-                  <a href='{{task.clinic_website}}' style="color:white;text-decoration:none">CLICK HERE</a></td>
+                  <a href='{{task.clinic_website}}' style="color:white;text-decoration:none">Click here</a></td>
                 <td style="width:16%;color:white;">{{task.user|upper}} 
                   {% endif %}
                   {% if task.website is None %}
                 <h6>No Website</h6>
                 {% else %}
-                <a href='{{task.website}}' style="color:white;text-decoration:none">CLICK HERE</a></td>
+                <a href='{{task.website}}' style="color:white;text-decoration:none">Click here</a></td>
                   {% endif %}
               </tr>
           </tbody>
