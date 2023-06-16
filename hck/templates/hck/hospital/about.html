@@ -22,8 +22,8 @@ h1{
     transform: scale(1.05);
   }
   .custom-card{
-    max-width: 400px;
-    margin: auto;
+    margin-bottom: 20px;
+
   }
   h5{
     color: #000f26;
@@ -33,15 +33,6 @@ h1{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
-
-  .center {
-    text-align: center;
-  }
-
-  .point-list {
-    display: inline-block;
-    text-align: left;
   }
 
   @media (min-width: 768px) {
@@ -64,16 +55,10 @@ h1{
       {% for feature in features %}
       <div class="col-lg-6 col-md-12 custom-card">
         </br>
-        <div class="card mb-0">
+        <div class="card mb-4">
           <div class="card-body">
             <h5 class="card-title text-white text-center">{{ feature.title }}</h5>
-              <div class="center">
-                <ul class="point-list">
-                  {% for point in feature.points %}
-                    <li>{{ point }}</li>
-                  {% endfor %}
-                </ul>
-              </div>
+            <p class="card-text text-white">{{ feature.description }}</p>
           </div>
         </div>
       </div>
