@@ -1,54 +1,24 @@
 {% extends '../hck/base.html' %} 
 {% block title %}Login{% endblock title %}
-{% block content %}
+  {% block content %}
 {% load crispy_forms_tags %}
-<style>
-  body{
-    background-color: #000f26;
-  }
-  form{
-    color: white;
-    text-align: center;
-  }
-  .form-label{
-    color: white;
-    font-size: 20px;
-  }
-  h1{
-    color: white;
-  }
-  .form-control:hover {
-    border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-  }
-  .form-control:not(:placeholder-shown) {
-    border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-  }
-  .card:hover {
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
-  }
-
-</style>
-<div class="container">
-  <div class="row justify-content-center align-items-center min-vh-100">
-    <div class="col-lg-6 col-md-8 rounded-md col-sm-10">
-      <div class="card bg-dark  border-radius-10">
-        <div class="card-body">
-          <h1 class="text-center mb-4"><u>Login Page</u></h1>
-          <form method="post" class="text-white">
-            {% csrf_token %}
-            {{ form|crispy }}
-
-            <div class="text-center">
-              <p class="mb-0">Hospital not found? Click <a href="/sign-up" style="text-decoration:none;color:white">here!</a></p>
-              <button type="submit" class="btn btn-outline-info mt-3">Login</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+  <div class=" flex container" style="padding-left:20%;padding-right:15%;padding-top:10%;    width: 100%;
+  min-height: 93vh;
+  background: rgb(161, 214, 253);  ">
+    
+    <div class="flex-r login-wrapper">
+        <div class="login-text" style="   background-color: #F6F6F6;
+        max-width: 500px;
+        min-height: 300px;
+        border-radius: 10px;
+        padding: 20px 20px;margin-left:40px" >
+    <center><form method="post" >
+      <h1><u>Login Page</u></h1><br>
+      {% csrf_token %}
+      {{form|crispy}}
+      <center><p>Hospital not found? <br> Click <a href='/sign-up'>here!</a></p> </center>
+    <center><button type="submit" class="btn btn-outline-info">Login</button></center>
+    </form>
+  </div> 
+</div> </div> 
 {% endblock content %}
