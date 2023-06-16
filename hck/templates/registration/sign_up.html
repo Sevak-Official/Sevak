@@ -1,31 +1,70 @@
 {% extends '../hck/base.html' %}
 {% block title %}Sign Up{% endblock%}
-{% load crispy_forms_tags %} {% block content %}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+  body {
+    background-color: #000f26;
+  }
+  form {
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  .form-label {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  h1 {
+    color: white;
+  }
+  .form-control:hover {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  .form-control:not(:placeholder-shown) {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  .container {
+    padding: 20px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+  }
+  .card {
+    margin: 0 auto;
+    max-width: 500px;
+  }
+</style>
 
-  <div class=" flex container" style="padding-left:15%;padding-right:15%;padding-top:1.5%;padding-bottom:1.5%; width: 100%;
-  min-height: 93vh;
-  background: rgb(161, 214, 253);  ">
-    
-    <div class="flex-r login-wrapper">
-        <div class="login-text" style=" background-color: #F6F6F6;
-        max-width: 500px;
-        min-height: 300px;
-        border-radius: 10px;
-        padding: 20px 20px;margin-left:24%" >
-    <center><form method="post" style="  align-items: flex-start !important;
-      width: 100%;
-      margin-top: 15px;
-  ">
-<form method="post">
-  <h1><u>Registration</u></h1><br>
-  {% csrf_token %}
-  {{form|crispy}}
-  <div class="form-group">
-    <center><button type="submit" class="btn btn-outline-info">Register</button></center>
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+    <h1 class="text-center mb-4"><u> Hospital Registration</u></h1>
+    <div class="col-lg-6 col-md-8 rounded-md col-sm-10">
+      <div class="card bg-dark border-radius-10">
+        <div class="card-body">
+         
+          <form method="post" class="text-success">
+            {% csrf_token %}
+            {{ form|crispy }}
+
+            <div class="text-center">
+              <div class="form-group">
+                <center><button type="submit" class="btn btn-outline-info">Register</button></center>
+              </div>
+
+              <p class="mb-0">Already Registered? Login<a href="/login" style="text-decoration:none;color:white"> here!</a></p>
+             
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <center><p> Already Registered? <br> Login <a href='/login'>here</a></p></center>
-</div></div></div>
+</div>
 
-</form>
 
 {% endblock %}

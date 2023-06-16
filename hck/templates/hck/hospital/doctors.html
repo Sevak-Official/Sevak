@@ -1,0 +1,21 @@
+{% extends 'hck/hospital/hospitals.html' %}
+{% block content %}
+<div class="container">
+    <h1><u>Doctors</u></h1>
+    {% for task in page_obj %}
+    {% if user == task.user %}
+      <div class="row container">
+      {% for feature in features %}
+      <div class="col-lg-6 col-md-12 custom-card">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title text-white text-center">Doctor Name: {{ task.name }}</h5>
+            <p class="card-text text-white">Specialisation: {{task.specialization}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+</div>
+{% endblock content %}
