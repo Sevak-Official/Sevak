@@ -22,20 +22,36 @@ from django.contrib.auth import login,logout,authenticate
 def about(request):
      features = [
         {
-            'title': 'One-Stop Resource',
-            'description': 'Our web application serves as a one-stop resource for patients to locate physicians specialized in treating their specific symptoms by searching for the city, physician\'s name, or the physician\'s area of specialization. ',
+            'title': 'Advanced Search & Filter',
+            'points': [
+                    "Detailed search functionality for patients",
+                    "Precise Specialization-based Filtering",
+                    "Effortless, User-friendly Interface"
+                ],
         },
         {
-            'title': 'Access to Clinics and Hospitals',
-            'description': 'Also, our service provides patients with the convenience of accessing information about the clinics or hospitals where their chosen physician practices, allowing them to consider both hospitals and clinics as options for treatment. ',
+            'title': 'Detailed Facility Information',
+            'points': [
+                    "Explore clinics and hospitals for treatment",
+                    "Multiple options: hospitals and clinics",
+                    "Detailed info on healthcare facilities"
+                ],
         },
         {
-            'title': 'Hospital Registration',
-            'description': 'Hospitals are also able to register with our service and provide information about the doctors they have on staff, thus contributing to our mission of assisting patients in finding physicians in their local area. ',
+            'title': 'Hospital Partnership',
+            'points': [
+                    "Register, share information",
+                    "Strengthening local physician search",
+                    "Comprehensive care provision"
+                ],
         },
         {
-            'title': 'Restricted Access',
-            'description': 'Access to add information about doctors is restricted to authenticated users only. Thus allowing no external organization to edit any information of the hospital.',
+            'title': 'Secure Access',
+            'points': [
+                    "Restricted access for authenticated users",
+                    "Secure information management",
+                    "No External Editing"
+                ],
         },
     ]
      business_models = [
