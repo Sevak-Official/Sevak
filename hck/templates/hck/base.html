@@ -2,7 +2,18 @@
 
   {% load static %}
   <html lang="en">
-  
+    
+    <style>
+      .dropdown-menu {
+        display: none;
+      }
+
+      .dropdown-toggle:hover + .dropdown-menu,
+      .dropdown-menu:hover {
+        display: block;
+      }
+    </style>
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,11 +50,11 @@
 
   <body>
     {% block content %}
-        <div class="container-sm">
+        <div class="container-sm" style="display: flex; justify-content: center;">
           <div class="hstack gap-4" style="padding-top: 5%;">
 
                 <div class="bg-light border">
-                  <img src="{% static 'hck/images/doctor.gif' %}" alt="doctor patient conversing"/>
+                  <img src="{% static 'hck/images/doctor.gif' %}" alt="doctor patient conversing" style="width: 750px; height: auto;" />
                 </div>
 
                   <div class="bg-light border">
