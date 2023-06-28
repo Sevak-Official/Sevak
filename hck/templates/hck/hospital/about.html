@@ -2,6 +2,28 @@
 <title>{% block title %}Sevak{% endblock title %}</title>
 
 {% block content %}
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-left" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Portal
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/patients">Patients</a></li>
+          <li><a class="dropdown-item" href="/hospitals">Hospitals</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/about">About</a>
+      </li>
+    </ul>
+    <a class="navbar-brand" href="/" style="font:verdana">Sevak</a>
+  </div>
+</nav>
 <style>
   body {
     {% comment %}  {% endcomment %}
@@ -22,8 +44,8 @@ h1{
     transform: scale(1.05);
   }
   .custom-card{
-    max-width: 400px;
-    margin: auto;
+    margin-bottom: 20px;
+
   }
   h5{
     color: #000f26;
@@ -33,15 +55,6 @@ h1{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
-
-  .center {
-    text-align: center;
-  }
-
-  .point-list {
-    display: inline-block;
-    text-align: left;
   }
 
   @media (min-width: 768px) {
@@ -58,22 +71,17 @@ h1{
 </style>
 
 </br>
+
   <div class="container">
     <h1>Features</h1> 
     <div class="row container" style="margin-bottom: 35px;">
       {% for feature in features %}
       <div class="col-lg-6 col-md-12 custom-card">
         </br>
-        <div class="card mb-0">
+        <div class="card mb-4">
           <div class="card-body">
             <h5 class="card-title text-white text-center">{{ feature.title }}</h5>
-              <div class="center">
-                <ul class="point-list">
-                  {% for point in feature.points %}
-                    <li>{{ point }}</li>
-                  {% endfor %}
-                </ul>
-              </div>
+            <p class="card-text text-white">{{ feature.description }}</p>
           </div>
         </div>
       </div>

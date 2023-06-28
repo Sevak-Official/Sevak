@@ -1,6 +1,7 @@
 {% extends 'hck/hospital/hospitals.html' %}
 {% block title %}Patient{% endblock title %}
 {% block content %}
+
 {% load crispy_forms_tags %}
 
 <style>
@@ -41,17 +42,14 @@
     <a class="navbar-brand" href="/" style="font:verdana">Sevak</a>
   </div>
 </nav>
-
+<form class="d-flex"  role="search">
+  <input class="form-control me-2" type="search" name='q' placeholder="Enter City or Specialization or Doctor" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit" >Search</button>
+</form>
   <div class="container-sm" >
-    </br>
-    <h1 class="center-underline">Patients Portal</h1>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" name='q' placeholder="Enter City or Specialization or Doctor" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit" >Search</button>
-      </form>
-    </br>
+    <br>
       <div class="table-responsive">
-        <table class="table table-bordered table-fixed text-center">
+        <table class="table table-bordered table-fixed">
           <thead>
             <tr>
                 <th style="width:10%;color:white">Name</th>
@@ -76,7 +74,7 @@
                   {% if task.website is None %}
                 <h6>No Website</h6>
                 {% else %}
-                <a href='{{task.website}}' style="color:white;text-decoration:none">Click here</a></td>
+                <a href='{{task.website}}' style="color:white;text-decoration:none">CLICK HERE</a></td>
                   {% endif %}
               </tr>
           </tbody>
@@ -85,6 +83,7 @@
       </table>
   </div>
           {% endfor %}
+</div>
 </div>
 
 {% endblock content %}
