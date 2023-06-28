@@ -1,21 +1,28 @@
 {% extends 'hck/hospital/hospitals.html' %}
+
 {% block content %}
-<div class="container">
-    <h1><u>Doctors</u></h1>
-    {% for task in page_obj %}
-    {% if user == task.user %}
-      <div class="row container">
-      {% for feature in features %}
-      <div class="col-lg-6 col-md-12 custom-card">
+<a href="/hospitals" class="btn btn-outline-light mb-2">Go Back</a>
+<div >
+  <center><h1><u>Doctors</u></h1></center>
+  {% for task in table %}
+  <div class="row container-sm p-2 m-2 ">
+   
+    {% if task.hospital.user == request.user %}
+    <div class="col-lg-6 col-md-12 custom-card">
+      
         <div class="card mb-4">
           <div class="card-body">
             <h5 class="card-title text-white text-center">Doctor Name: {{ task.name }}</h5>
-            <p class="card-text text-white">Specialisation: {{task.specialization}}</p>
+            <p class="card-text text-white">Specialization: {{ task.specialization }}</p>
           </div>
         </div>
-      </div>
-      {% endfor %}
+      
     </div>
-
+    {% endif %}
+      {% empty %}
+          <h6 class="text-white">No items in list</h6>
+   
+  </div>
+  {% endfor %}
 </div>
 {% endblock content %}

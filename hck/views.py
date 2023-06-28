@@ -80,20 +80,33 @@ def about(request):
      context = {'features': features,'business_models':business_models}
      return render(request,'hck/hospital/about.html',context)
 def base(request):
-    return render(request,'hck/base.html')
+    card_details = [
+        {
+            'title': 'Hospital Portal-',
+            'text': 'Hospitals and their doctors may register themselves on this platform.',
+            'link': '/hospitals',
+            'button_text': 'Click here',
+        },
+        {
+            'title': 'Patients Portal-',
+            'text': 'Patients may provide details about their problems on this platform.',
+            'link': '/patients',
+            'button_text': 'Click here',
+        },
+    ]
+    return render(request,'hck/base.html',{'card_details':card_details})
 @login_required(login_url='/login')
 def main(request):
     if request.method=="POST":
-     form=DoctorForm(request.POST)
+     form = DoctorForm(request.POST)
      if form.is_valid():
-        specialization=request.POST['specialization']
-        name=request.POST['name']
-        city=request.POST['city']
-        t=form.save(commit=False)
-        t.user = request.user
-        t.save()
+            doctor = form.save(commit=False)
+            doctor.hospital = Hospital.objects.get(user=request.user)
+            doctor.save()
+
+            return redirect('doctors')  
     else:
-         form=DoctorForm()
+        form = DoctorForm()
 
     return render(request, 'hck/hospital/hospitals.html', {
         "form": form,
@@ -101,12 +114,8 @@ def main(request):
 
 @login_required(login_url='/login')
 def doctors(request):
-    table = Doctor.objects.all()
-    # paginator = Paginator(table, 5)
-    # page_number = request.GET.get('page')
-    # page_obj = paginator.get_page(page_number)
-
-    return render(request, 'hck/hospital/doctors.html')
+    doctors=Doctor.objects.all()
+    return render(request, 'hck/hospital/doctors.html', { 'table': doctors,})
 
 
 def sign_up(request):
@@ -137,7 +146,7 @@ def sign_up(request):
 def patients(request):
     if 'q' in request.GET:
         q = request.GET['q']
-        multiple_q=Q(Q(city__icontains=q) | Q(specialization__icontains=q) | Q(name__icontains=q)) 
+        multiple_q=Q( Q(specialization__icontains=q) | Q(name__icontains=q)) 
         table = Doctor.objects.filter(multiple_q)
     else:
         table = Doctor.objects.all()

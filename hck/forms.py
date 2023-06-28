@@ -19,7 +19,7 @@ class RegisterForm(UserCreationForm):
 class DoctorForm(forms.ModelForm):
     class Meta:
         model=Doctor
-        fields=["specialization","name","city","clinic_website"]
+        fields=["specialization","name","clinic_website"]
 class PatientForm(forms.ModelForm):
     class Meta:
         model=Patient

@@ -87,8 +87,7 @@ h1{
     transition: background-color 1s;
   }
   .card:hover {
-    background-color: #1f1f1f; 
-    transform: scale(1.05);
+    background-color: black; 
   }
   .custom-card{
     margin-bottom: 20px;

@@ -18,7 +18,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> {% block title %}Sevak{% endblock title %}</title>
-    <link rel="stylesheet" href="{% static 'hck/styles.css' %}">
     <link rel="shortcut icon" href="{%  static 'hck/favicon.ico' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,61 +27,89 @@
 
   <body >
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse justify-content-left" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mx-auto">
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Portal
-                </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/patients">Patients</a></li>
-                    <li><a class="dropdown-item" href="/hospitals">Hospitals</a></li>
-                  </ul>
-              </li>
-
-              <li class="nav-item">
-                        <a class="nav-link active" href="/about">About</a>
-              </li>
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Portal
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/patients">Patients</a></li>
+              <li><a class="dropdown-item" href="/hospitals">Hospitals</a></li>
             </ul>
-              <a class="navbar-brand" href="/" style="font:verdana">Sevak</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/about">About</a>
+          </li>
+        </ul>
+        <a class="navbar-brand" href="/" style="font:verdana">Sevak</a>
       </div>
     </nav>
+    
     {% block content %}
-        <div class="container-sm" style="display: flex; justify-content: center;">
-          <div class="hstack gap-4" style="padding-top: 5%;">
-
-                <div class="bg-light border">
-                  <img src="{% static 'hck/images/doctor.gif' %}" alt="doctor patient conversing" style="width: 750px; height: auto;" />
-                </div>
-
-                  <div class="bg-light border">
-                    <div class="vstack gap-3">
-
-                          <div class="bg-light border">
-                            <div class="card" style="width: 100%;">
-                              <div class="card-body">
-                                <h5 class="card-title">Hospital Portal-</h5>
-                                <p class="card-text">Hospitals and their doctors may register themselves on this platform.</p>
-                                <a href="/hospitals" class="btn btn-primary">Click here</a>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="bg-light border">
-                            <div class="card" style="width: 100%;">
-                              <div class="card-body">
-                                <h5 class="card-title">Patients Portal-</h5>
-                                <p class="card-text">Patients may provide details about their problems on this platform.</p>
-                                <a href="/patients" class="btn btn-primary">Click here</a>
-                              </div>
-                            </div>
-                          </div>
-
-                    </div>
-                  </div>
+    <div class="container-sm d-none d-lg-block">
+      <div class="d-flex justify-content-center">
+        <div class="d-flex gap-4" style="padding-top: 5%; bg-white">
+    
+          <div class="bg-light border">
+            {% comment %} Fill in the image {% endcomment %}
+            <img src="{% static 'images/doctor.gif' %}" class="img-fluid " alt="Responsive image" >
           </div>
+    
+          <div class="bg-light border">
+            <div class="d-flex flex-column gap-3">
+              {% for card in card_details %}
+              <div class="bg-light border">
+                <div class="card" style="width: 100%;">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ card.title }}</h5>
+                    <p class="card-text">{{ card.text }}</p>
+                    <a href="{{ card.link }}" class="btn btn-primary">{{ card.button_text }}</a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+    
         </div>
+      </div>
+    </div>
+    
+    <div class="container-sm d-block d-lg-none">
+      <div class="d-flex justify-content-center">
+        <div class="row gap-4" style="padding-top: 5%;">
+    
+          <div class="col-lg-6">
+            <div class="bg-light border">
+              {% comment %} Fill in the image {% endcomment %}
+              <img src="{% static 'images/doctor.gif' %}" class="img-fluid " alt="Responsive image">
+            </div>
+          </div>
+    
+          <div class="col-lg-6">
+            <div class="d-flex flex-column gap-3">
+              {% for card in card_details %}
+              <div class="bg-light border">
+                <div class="card" style="width: 100%;">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ card.title }}</h5>
+                    <p class="card-text">{{ card.text }}</p>
+                    <a href="{{ card.link }}" class="btn btn-primary">{{ card.button_text }}</a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+    
 
               <section style="padding-top:4%">
                 <figure class="text-center">

@@ -1,20 +1,29 @@
-{% extends '../hck/base.html' %} 
-{% block title %}Login{% endblock title %}
-{% block content %}
+{% extends '../hck/base.html' %}
+{% block title %}Login{% endblock %}
 {% load crispy_forms_tags %}
+{% block content %}
 <style>
-  body{
+  body {
     background-color: #000f26;
   }
-  form{
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  form {
     color: white;
     text-align: center;
+    padding: 20px;
   }
-  .form-label{
+  .form-label {
     color: white;
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: bold;
   }
-  h1{
+  h1 {
     color: white;
   }
   .form-control:hover {
@@ -25,30 +34,35 @@
     border-color: #80bdff;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
+  .card {
+    {% comment %} background-color: #000f26; {% endcomment %}
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+  }
   .card:hover {
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
   }
-
 </style>
-<div class="container">
-  <div class="row justify-content-center align-items-center min-vh-100">
-    <div class="col-lg-6 col-md-8 rounded-md col-sm-10">
-      <div class="card bg-dark  border-radius-10">
-        <div class="card-body">
-          <h1 class="text-center mb-4"><u>Login Page</u></h1>
-          <form method="post" class="text-white">
-            {% csrf_token %}
-            {{ form|crispy }}
 
-            <div class="text-center">
-              <p class="mb-0">Hospital not found? Click <a href="/sign-up" style="text-decoration:none;color:white">here!</a></p>
-              <button type="submit" class="btn btn-outline-info mt-3">Login</button>
-            </div>
-          </form>
+<div class="container">
+  <div class="card">
+    <h1 class="text-center mb-4"><u>Hospital Login</u></h1>
+    <form method="post" class="text-white">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <div class="text-center">
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-info">Login</button>
         </div>
+        <p class="mb-0 text-white">Did not register? Click<a href="/sign-up" style="text-decoration:none;color:white"> HERE</a></p>
       </div>
-    </div>
+    </form>
   </div>
 </div>
 
-{% endblock content %}
+{% endblock %}

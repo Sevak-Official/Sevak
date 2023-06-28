@@ -19,7 +19,28 @@
     margin-left: 60%;
   }
 </style>
-
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-left" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Portal
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/patients">Patients</a></li>
+          <li><a class="dropdown-item" href="/hospitals">Hospitals</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/about">About</a>
+      </li>
+    </ul>
+    <a class="navbar-brand" href="/" style="font:verdana">Sevak</a>
+  </div>
+</nav>
 
   <div class="container-sm" >
     </br>
@@ -33,14 +54,11 @@
         <table class="table table-bordered table-fixed text-center">
           <thead>
             <tr>
-              <div class="gf">
                 <th style="width:10%;color:white">Name</th>
             <th style="width:10%;color:white">City</th>
             <th style="width:10%;color:white">Specialization</th>
             <th style="width:10%;color:white">Clinic Website</th>
             <th style="width:16%;color:white">Hospital Name</th>
-            <div />
-            <div />
             </tr>
           </thead>
           {% for task in page_obj %}
@@ -53,7 +71,7 @@
                   {% if task.clinic_website is None %}
                 <h6>No Website</h6> {% else %}
                   <a href='{{task.clinic_website}}' style="color:white;text-decoration:none">Click here</a></td>
-                <td style="width:16%;color:white;">{{task.user|upper}} 
+                <td style="width:16%;color:white;">{{task.hospital.user|upper}} 
                   {% endif %}
                   {% if task.website is None %}
                 <h6>No Website</h6>

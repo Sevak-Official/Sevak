@@ -1,10 +1,17 @@
 {% extends '../hck/base.html' %}
-{% block title %}Sign Up{% endblock%}
+{% block title %}Sign Up{% endblock %}
 {% load crispy_forms_tags %}
 {% block content %}
 <style>
   body {
     background-color: #000f26;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
   }
   form {
     color: white;
@@ -27,44 +34,35 @@
     border-color: #80bdff;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   }
-  .container {
-    padding: 20px;
-  }
-  
-  .card:hover {
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
-  }
   .card {
+    background-color: #000f26;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
     margin: 0 auto;
     max-width: 500px;
+    width: 100%;
+  }
+  .card:hover {
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
   }
 </style>
 
 <div class="container">
-  <div class="row justify-content-center align-items-center">
-    <h1 class="text-center mb-4"><u> Hospital Registration</u></h1>
-    <div class="col-lg-6 col-md-8 rounded-md col-sm-10">
-      <div class="card bg-dark border-radius-10">
-        <div class="card-body">
-         
-          <form method="post" class="text-success">
-            {% csrf_token %}
-            {{ form|crispy }}
+  <div class="card">
+    <h1 class="text-center mb-4"><u>Hospital Registration</u></h1>
+    <form method="post" class="text-success">
+      {% csrf_token %}
+      {{ form|crispy }}
 
-            <div class="text-center">
-              <div class="form-group">
-                <center><button type="submit" class="btn btn-outline-info">Register</button></center>
-              </div>
-
-              <p class="mb-0">Already Registered? Login<a href="/login" style="text-decoration:none;color:white"> here!</a></p>
-             
-            </div>
-          </form>
+      <div class="text-center">
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-info">Register</button>
         </div>
+        <p class="mb-0 text-white">Already Registered? Login<a href="/login" style="text-decoration:none;color:white"> HERE</a></p>
       </div>
-    </div>
+    </form>
   </div>
 </div>
-
 
 {% endblock %}

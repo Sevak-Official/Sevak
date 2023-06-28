@@ -12,25 +12,34 @@ class Hospital(models.Model):
     def __str__(self):
         return  f"{self.city} {self.email} "
     
-class Doctor(Hospital):    
+class Doctor(models.Model):    
        SOME_CHOICES = (
   ("SELECT","SELECT"),
     ( "Gastroenterology","Gastroenterology(Discomfort in stomach,Digestive Disorders)"),
     ("Cardiography","Cardiography(Chest Pain)"),
     ("Radiology","Radiology(X-Ray)"),
     ("Orthopedics","Orthopedics(Injury,Fracture)"),
-    ("Opthalmology","Opthalmology(Problem in Eyes)"),
+    ("Ophtalmology","Ophtalmology(Problem in Eyes)"),
     ("Psychiatry","Psychiatry(Depression,Mental Health)"),
     ("Dermatology","Dermatology(Skin Problem)"),
     ("Otolaryngologist","Otolaryngologist(Ear,Nose or Throat Issues)"),
     ("Nephrology","Nephrology(Kidney Disease)"),
     ("Dentist","Dentist(ToothCheck)"),
 )      
+       hospital = models.ForeignKey(Hospital,on_delete=models.CASCADE)
        specialization=models.CharField(max_length=200,choices=SOME_CHOICES,default="--")
        name=models.CharField(max_length=100)
        clinic_website=models.URLField(null=True,blank=False)
+
+       @property
+       def hospital_website(self):
+             return self.hospital.website
+
+       @property
+       def city(self):
+         return self.hospital.city
        def __str__(self):
-        return  f"{self.specialization} {self.name} "
+         return  f"{self.specialization} {self.name} "
 class Patient(models.Model):
     D_CHOICES = (
       ("SELECT","SELECT"),
