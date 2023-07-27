@@ -7,16 +7,7 @@ from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login,logout,authenticate
 # Create your views here.
-# team-superuser
-# team404-pass
-#abc-user
-#aaaa@332-password
-#user-AJIMS
-#pass-123@aaAb
-#user-BJIMS
-#pass-123@abc
-#user-JJIMS
-#pass-123@Aabc
+
 def about(request):
      features = [
         {
@@ -128,13 +119,13 @@ def sign_up(request):
 def patients(request):
     if 'q' in request.GET:
         q = request.GET['q']
-        multiple_q=Q( Q(specialization__icontains=q) | Q(name__icontains=q)) 
-        table = Doctor.objects.filter(multiple_q)
+        table = Doctor.objects.filter(Q(name__icontains=q) | Q(specialization__icontains=q) | Q(hospital__city__icontains=q) )
     else:
         table = Doctor.objects.all()
     paginator = Paginator(table, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+
     if request.method=="POST":
      form=PatientForm(request.POST)
      if form.is_valid():
